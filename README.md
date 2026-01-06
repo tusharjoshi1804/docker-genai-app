@@ -28,23 +28,29 @@ This project takes a user query, optionally fetches relevant Wikipedia context, 
 ### API Endpoints
 
 -**Health Check**
+
 Purpose: Used to verify that the application is running and ready to accept requests.
 Endpoint: GET /
 
 -**Text Generation**
+
 Purpose: Generates a simple explanation for the given input text.
 Endpoint: GET /generate
 
 -**Swagger Documentation**
+
 FastAPI automatically generates interative API documentation.
 Swagger UI path: /docs
 
 -**Docker Setup (Local execution)**
+
 This application is fully containerized using Docker and could be run locally after building the image. Once the container is running, the swagger UI is available on port 7860.
 
 ## Live Deployment 
+
 This app is deployed on Hugging face spaces using Docker.
 
-Live API URL: [https://tusharj18-text2textwithdocker.hf.space](URL)
-Swagger UI: [https://tusharj18-text2textwithdocker.hf.space/docs](URL)
+Live API URL: [https://tusharj18-text2textwithdocker.hf.space]
+
+Swagger UI: [https://tusharj18-text2textwithdocker.hf.space/docs]
 
