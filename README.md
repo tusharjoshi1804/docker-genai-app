@@ -2,7 +2,7 @@
 
 A Dockerized **Text-to-Text Generative AI API** built using **FastAPI**, **Hugging Face Transformers**, and **Wikipedia lookup**, deployed on **Hugging Face Spaces**.
 
-This project takes a user query, optionally fetches relevant Wikipedia context, and generates a **simple, human-friendly explanation** using an LLM.
+This project takes a user query, optionally fetches relevant Wikipedia context, and generates a simple, human-friendly explanation using an LLM.
 
 
 ## 🔥 Features
@@ -47,13 +47,13 @@ Swagger UI path: /docs
 
 -**Docker Setup (Local execution)**
 
-This application is fully containerized using Docker and could be run locally after building the image. Once the container is running, the swagger UI is available on port 7860.
+This application is fully containerized using Docker and could be run locally after building the image. Once the container is running, the swagger UI is available on **port 7860**.
 
 ## Live Deployment 
 
 This app is deployed on Hugging face spaces using Docker.
 
-Live API URL: [https://tusharj18-text2textwithdocker.hf.space](URL)
+Live API URL:[Live API](https://tusharj18-text2textwithdocker.hf.space)
 
-Swagger UI: [https://tusharj18-text2textwithdocker.hf.space/docs](URL)
+Swagger UI: [Swagger UI](https://tusharj18-text2textwithdocker.hf.space/docs)
 
