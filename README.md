@@ -53,7 +53,7 @@ This application is fully containerized using Docker and could be run locally af
 
 This app is deployed on Hugging face spaces using Docker.
 
-Live API URL:[Live API](https://tusharj18-text2textwithdocker.hf.space)
-
-Swagger UI: [Swagger UI](https://tusharj18-text2textwithdocker.hf.space/docs)
+[Live API](https://tusharj18-text2textwithdocker.hf.space)
+ 
+[Swagger UI](https://tusharj18-text2textwithdocker.hf.space/docs)
 
