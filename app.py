@@ -2,20 +2,18 @@ from fastapi import FastAPI, Query
 from transformers import pipeline
 import wikipedia
 
-# ---------------- APP CONFIG ----------------
+
 app = FastAPI(
     title="Text2Text Generative AI API",
     description="Text generation using Hugging Face + Wikipedia context",
     version="1.2"
 )
 
-# ---------------- MODEL LOADING ----------------
 generator = pipeline(
     "text2text-generation",
     model="google/flan-t5-large"
 )
 
-# ---------------- HOME ROUTE ----------------
 @app.get("/")
 def home():
     return {
@@ -23,7 +21,7 @@ def home():
         "docs": "/docs"
     }
 
-# ---------------- GENERATE ROUTE ----------------
+
 @app.get("/generate")
 def generate(
     text: str = Query(
@@ -33,7 +31,7 @@ def generate(
     )
 ):
 
-    # -------- Fetch Wikipedia Context --------
+    # Fetch Wikipedia Context 
     try:
         wiki_summary = wikipedia.summary(
             text,
@@ -45,7 +43,7 @@ def generate(
     except Exception:
         wiki_summary = ""
 
-    # -------- Prompt Engineering --------
+    # Prompt Engineering 
     prompt = f"""
 You are a helpful AI assistant.
 Answer clearly and accurately in simple language.
@@ -57,7 +55,7 @@ Helpful reference (if relevant):
 Answer:
 """
 
-    # -------- Text Generation --------
+    # Text Generation 
     result = generator(
         prompt,
         max_new_tokens=200,
