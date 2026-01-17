@@ -52,24 +52,29 @@ GET /generate?text=your_query_here
 }
 
 ## Swagger Documentation
+
 FastAPI automatically generates interactive API documentation.
 
 /docs
-Use this interface to test endpoints directly from the browser.
+Using this interface we can test endpoints directly from the browser.
 
 ## Cloud Deployment
 
-This application is containerized using Docker and deployed on Hugging Face Spaces.
+This application is containerized using Docker and deployed on **Hugging Face Spaces**.  
 The platform automatically builds the Docker image, manages the runtime environment, and exposes the API publicly.
+
 Key deployment characteristics:
 
--Docker-based container build
--Automatic image build and startup on cloud infrastructure
--Public HTTPS endpoint
--Auto-restart on failure
+- Docker-based container is build  
+- Automatic image build and startup on cloud infrastructure  
+- Public HTTPS endpoint  
+- Auto-restart on failure  
+
 
 ## Live Application
-Live API:
-https://tusharj18-docker-genai-api.hf.space
-Swagger UI:
+
+Live API:  
+https://tusharj18-docker-genai-api.hf.space  
+
+Swagger UI:  
 https://tusharj18-docker-genai-api.hf.space/docs
