@@ -12,7 +12,7 @@ app = FastAPI(
 # ---------------- MODEL LOADING ----------------
 generator = pipeline(
     "text2text-generation",
-    model="google/flan-t5-base"
+    model="google/flan-t5-large"
 )
 
 # ---------------- HOME ROUTE ----------------
