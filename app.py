@@ -33,29 +33,28 @@ def generate(
     )
 ):
 
-    # -------- Fetch Wikipedia Context --------
-    try:
-        wiki_summary = wikipedia.summary(text, sentences=2)
-        wiki_summary = wiki_summary.replace("\n", " ").strip()
-        wiki_summary = wiki_summary[:600]   # limit noise for small models
-    except Exception:
-        wiki_summary = ""
+   # -------- Fetch Wikipedia Context --------
+try:
+    wiki_summary = wikipedia.summary(text, sentences=1, auto_suggest=False)
+    wiki_summary = wiki_summary.replace("\n", " ").strip()
+    wiki_summary = wiki_summary[:400]
+except Exception:
+    wiki_summary = ""
 
-    # -------- Prompt Engineering --------
-    prompt = f"""
-You are a helpful and knowledgeable AI assistant.
-Answer clearly, correctly, and briefly.
-If helpful, give one simple example.
+# -------- Prompt Engineering --------
+prompt = f"""
+You are a helpful AI assistant.
+Answer clearly and accurately in simple language.
+Ignore unrelated information.
 
 Question:
 {text}
 
-Reference Information:
+Helpful reference (if relevant):
 {wiki_summary}
 
 Answer:
 """
-
     # -------- Text Generation --------
     result = generator(
         prompt,
