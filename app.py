@@ -6,7 +6,7 @@ import wikipedia
 app = FastAPI(
     title="Text2Text Generative AI API",
     description="Text generation using Hugging Face + Wikipedia context",
-    version="1.1"
+    version="1.2"
 )
 
 # ---------------- MODEL LOADING ----------------
@@ -33,32 +33,34 @@ def generate(
     )
 ):
 
-   # -------- Fetch Wikipedia Context --------
-try:
-    wiki_summary = wikipedia.summary(text, sentences=1, auto_suggest=False)
-    wiki_summary = wiki_summary.replace("\n", " ").strip()
-    wiki_summary = wiki_summary[:400]
-except Exception:
-    wiki_summary = ""
+    # -------- Fetch Wikipedia Context --------
+    try:
+        wiki_summary = wikipedia.summary(
+            text,
+            sentences=1,
+            auto_suggest=False
+        )
+        wiki_summary = wiki_summary.replace("\n", " ").strip()
+        wiki_summary = wiki_summary[:400]
+    except Exception:
+        wiki_summary = ""
 
-# -------- Prompt Engineering --------
-prompt = f"""
+    # -------- Prompt Engineering --------
+    prompt = f"""
 You are a helpful AI assistant.
 Answer clearly and accurately in simple language.
 Ignore unrelated information.
-
 Question:
 {text}
-
 Helpful reference (if relevant):
 {wiki_summary}
-
 Answer:
 """
+
     # -------- Text Generation --------
     result = generator(
         prompt,
-        max_new_tokens=150,
+        max_new_tokens=200,
         do_sample=True,
         temperature=0.7,
         top_p=0.9
